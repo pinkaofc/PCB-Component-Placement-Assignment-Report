@@ -1,0 +1,65 @@
+
+# 📘 PCB Component Placement Assignment Report
+
+**Student Name**: Priyanka Kumari   
+**Assignment**: PCB Layout Optimization  
+**Date**: 24 September 2025
+
+---
+
+## 🧠 Objective
+
+Design and implement a Python-based algorithm to place five components on a 50×50 PCB board while satisfying multiple engineering constraints:
+
+- **Edge Placement**: MB1 and MB2 must be placed on opposite vertical edges; USB must be placed on the bottom edge.
+- **Proximity**: XTAL must be within 10 units of the microcontroller (μC).
+- **Keep-Out Zone**: No direct line between XTAL and μC may intersect the USB keep-out zone.
+- **Center of Mass**: All components must be balanced within 2.0 units of the board center.
+- **No Overlap**: Components must not overlap.
+- **Board Boundaries**: All components must be fully within the board.
+
+---
+
+## 🛠 Implementation Summary
+
+The solution was implemented in Python using object-oriented design and geometric algorithms. Key features include:
+
+- **Component Class**: Encapsulates position, size, rotation, and center calculations.
+- **Placement Functions**: Strategically place edge components, center the microcontroller, and search for valid XTAL positions.
+- **Constraint Validation**: A unified function checks all constraints and computes distances.
+- **Retry Logic**: The algorithm attempts up to 500 layout variations to find a fully valid configuration.
+- **Visualization**: Matplotlib is used to render the final layout with labeled components and constraint zones.
+
+---
+
+## ✅ Final Validation Results
+
+After successful execution, the following results were achieved:
+
+```
+--- FINAL PLACEMENT VALIDATION ---
+Proximity Constraint  : PASSED Distance: 9.49
+Center of Mass        : PASSED Distance from center: 0.32
+Keep-Out Zone         : PASSED
+No Overlap            : PASSED
+```
+
+All constraints were satisfied within the required thresholds. The layout is balanced, compliant, and visually validated.
+
+---
+
+## 📊 Visualization
+
+The final plot includes:
+- Rectangular blocks for each component (MB1, MB2, USB, μC, XTAL)
+- A circular proximity zone around the microcontroller
+- A red keep-out zone above the USB
+- Gridlines and labels for clarity
+
+
+---
+
+## 🧾 Conclusion
+
+This assignment demonstrates a robust approach to spatial optimization under multiple constraints. The algorithm is modular, scalable, and capable of adapting to layout challenges through intelligent retries and scoring. All requirements were met, and the solution is ready for submission.
+
